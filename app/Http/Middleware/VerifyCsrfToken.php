@@ -12,14 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        'api/article',
+        'api/article/*'
     ];
 
-    protected function tokensMatch ($request)
-    {
-    	if($request->wantsJason()){
-    		return true;
-    	}
-    	return parent::tokensMatch($request);
-    }
+
 }
