@@ -15,13 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'article'],function(){
-	Route::get('',['uses'=>'ArticlesController@allArticles']);
-	Route::get('{id}',['uses'=>'ArticlesController@getArticle']);
-	Route::post('',['uses'=>'ArticlesController@saveArticle']);
-	Route::put('{id}',['uses'=>'ArticlesController@updateArticle']);
-	Route::delete('{id}',['uses'=>'ArticlesController@deleteArticle']);
-});
+Route::resource('articles','ArticleController');
 
 
 
